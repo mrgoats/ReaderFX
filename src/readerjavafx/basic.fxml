@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="readerjavafx.FXMLDocumentController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="..." />
+            <MenuItem fx:id="openMenu" mnemonicParsing="false" onAction="#handleOpenAction" text="Open…" />
+            <Menu fx:id="openRecentMenu" mnemonicParsing="false"  text="Open Recent">
+                     <items>
+                        <MenuItem fx:id="mostRecentlyOpened" onAction="#handleRecentFiles" mnemonicParsing="false" text="" />
+                     </items></Menu>
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem fx:id="closeMenu" mnemonicParsing="false" onAction="#handleCloseAction" text="Close" />
+            <MenuItem mnemonicParsing="false" text="..." />
+            <MenuItem mnemonicParsing="false" text="..." />
+            <MenuItem mnemonicParsing="false" text="..." />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem fx:id="quitMenu" mnemonicParsing="false" onAction="#handleQuitAction" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem fx:id="reverseMenu" mnemonicParsing="false" onAction="#handleReverseReadingAction" text="Reverse Reading Mode" />
+            <MenuItem mnemonicParsing="false" text="..." />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="..." />
+            <MenuItem mnemonicParsing="false" text="..." />
+            <MenuItem mnemonicParsing="false" text="..." />
+            <MenuItem mnemonicParsing="false" text="..." />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="..." />
+            <MenuItem mnemonicParsing="false" text="..." />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="...">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane id="content" fx:id="content" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+        <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;" text="Drop a zip file from your Library here…" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+          <font>
+            <Font size="18.0" />
+          </font>
+        </Label>
+      </children>
+    </AnchorPane>
+  </children>
+  <stylesheets>
+    <URL value="@BasicApplication.css" />
+  </stylesheets>
+</VBox>
